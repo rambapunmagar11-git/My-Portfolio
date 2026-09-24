@@ -1,0 +1,493 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- ==============================================
+     HERO SECTION
+=============================================== -->
+<section class="hero-section" id="home">
+    <div class="container hero-container">
+        <div class="hero-content">
+            <div class="hero-badge-wrapper">
+                <span class="badge-status">
+                    <span class="status-dot"></span>
+                    <span>B.Sc. CSIT Student</span>
+                </span>
+                <span class="badge-location">
+                    <i class="fa-solid fa-location-dot"></i> {{ data.personal.address }}
+                </span>
+            </div>
+
+            <h1 class="hero-title">
+                Hi, I'm <span class="gradient-text hero-name">{{ data.personal.name }}</span>
+            </h1>
+
+            <div class="hero-subtitle-container">
+                <span class="hero-static-text">I AM A </span>
+                <span class="typing-text" id="typing-text">STUDENT OF BSC CSIT</span>
+                <span class="typing-cursor">|</span>
+            </div>
+
+            <p class="hero-description">
+                Computer Science student at <strong>{{ data.personal.college }}</strong>, passionate about building responsive web applications, robust backends, and creative digital solutions.
+            </p>
+
+            <!-- Quick Academic Highlights Chips -->
+            <div class="hero-highlights">
+                <div class="highlight-chip">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span><strong>College:</strong> Mahendra College, Nepalgunj</span>
+                </div>
+                <div class="highlight-chip">
+                    <i class="fa-solid fa-book-open"></i>
+                    <span><strong>Faculty:</strong> B.Sc. CSIT (TU)</span>
+                </div>
+                <div class="highlight-chip">
+                    <i class="fa-solid fa-phone"></i>
+                    <a href="tel:{{ data.personal.phone }}" class="chip-link">{{ data.personal.phone }}</a>
+                </div>
+            </div>
+
+            <!-- Hero Action Buttons -->
+            <div class="hero-cta-group">
+                <a href="#projects" class="btn btn-primary btn-glow">
+                    <span>Explore My Work</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <span>Get in Touch</span>
+                    <i class="fa-solid fa-paper-plane"></i>
+                </a>
+                <a href="{{ url_for('download_cv') }}" class="btn btn-glass">
+                    <i class="fa-solid fa-download"></i>
+                    <span>Download CV</span>
+                </a>
+            </div>
+
+            <!-- Social Links -->
+            <div class="hero-social">
+                <span class="social-label">Find me on:</span>
+                <div class="social-icons">
+                    <a href="{{ data.personal.social.github }}" target="_blank" rel="noopener noreferrer" class="social-btn" title="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="{{ data.personal.social.facebook }}" target="_blank" rel="noopener noreferrer" class="social-btn" title="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="{{ data.personal.social.email_link }}" class="social-btn" title="Email Me">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                    <a href="tel:{{ data.personal.phone }}" class="social-btn" title="Call Me">
+                        <i class="fa-solid fa-phone"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Visual / Graphic Card -->
+        <div class="hero-visual">
+            <div class="avatar-card-wrapper">
+                <div class="avatar-card">
+                    <div class="avatar-glow"></div>
+                    <div class="avatar-frame">
+                        <div class="dev-avatar-circle">
+                            <img src="{{ url_for('static', filename='images/ramba_pun_magar.jpg') }}" alt="Ramba Pun Magar" class="profile-img">
+                        </div>
+                        <div class="avatar-code-icon" title="B.Sc. CSIT Developer">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                    </div>
+
+                    <div class="avatar-details">
+                        <h3 class="avatar-name">{{ data.personal.name }}</h3>
+                        <p class="avatar-sub">B.Sc. CSIT Student</p>
+                        <p class="avatar-college"><i class="fa-solid fa-building-columns"></i> Mahendra College, Nepalgunj</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Down Indicator -->
+    <a href="#about" class="scroll-indicator" aria-label="Scroll to About section">
+        <span class="mouse">
+            <span class="wheel"></span>
+        </span>
+        <span class="scroll-text">Scroll Down</span>
+    </a>
+</section>
+
+<!-- ==============================================
+     ABOUT SECTION
+=============================================== -->
+<section class="section about-section" id="about">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">ABOUT ME</h2>
+            <div class="section-line"></div>
+            <p class="section-subtitle">Dedicated to technology, problem solving, and modern digital development</p>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-card-main">
+                <div class="about-text-content">
+                    <div class="about-author-header">
+                        <img src="{{ url_for('static', filename='images/ramba_pun_magar.jpg') }}" alt="Ramba Pun Magar" class="about-avatar-thumb">
+                        <div>
+                            <h3 class="about-greeting">
+                                Namaste! I am <span class="highlight">{{ data.personal.name }}</span>
+                            </h3>
+                            <span class="about-sub-badge"><i class="fa-solid fa-graduation-cap"></i> B.Sc. CSIT &bull; Mahendra College, Nepalgunj</span>
+                        </div>
+                    </div>
+                    <p class="about-paragraph">
+                        I am currently studying <strong>B.Sc. CSIT</strong> at <strong>Mahendra College, Nepalgunj</strong> (Tribhuvan University). I live in Nepalgunj, Banke, and have an immense passion for software engineering, web design, and computational problem solving.
+                    </p>
+                    <p class="about-paragraph">
+                        Throughout my degree, I have honed skills in structured programming, object-oriented concepts, relational databases, and full-stack web applications. I love taking complex theoretical concepts and transforming them into elegant, user-friendly, responsive digital applications.
+                    </p>
+
+                    <div class="about-actions">
+                        <a href="{{ url_for('download_cv') }}" class="btn btn-primary">
+                            <i class="fa-solid fa-file-arrow-down"></i>
+                            <span>Get My Resume</span>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <i class="fa-solid fa-comment-dots"></i>
+                            <span>Contact Me Directly</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Info Cards -->
+            <div class="about-details-column">
+                <div class="info-card">
+                    <div class="info-icon"><i class="fa-solid fa-id-card"></i></div>
+                    <div class="info-body">
+                        <span class="info-title">Full Name</span>
+                        <span class="info-val">{{ data.personal.name }}</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                    <div class="info-body">
+                        <span class="info-title">Location / Address</span>
+                        <span class="info-val">{{ data.personal.address }}</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <div class="info-body">
+                        <span class="info-title">Faculty & College</span>
+                        <span class="info-val">B.Sc. CSIT &bull; Mahendra College, Nepalgunj</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                    <div class="info-body">
+                        <span class="info-title">Contact Number</span>
+                        <a href="tel:{{ data.personal.phone }}" class="info-val link-val">{{ data.personal.phone }}</a>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <div class="info-body">
+                        <span class="info-title">Email Address</span>
+                        <a href="mailto:{{ data.personal.email }}" class="info-val link-val">{{ data.personal.email }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Academic & Experience Stats -->
+        <div class="stats-row">
+            {% for stat in data.stats %}
+            <div class="stat-card">
+                <span class="stat-number">{{ stat.value }}</span>
+                <span class="stat-label">{{ stat.label }}</span>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+<!-- ==============================================
+     SKILLS SECTION
+=============================================== -->
+<section class="section skills-section" id="skills">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag"><i class="fa-solid fa-layer-group"></i> Technical Abilities</span>
+            <h2 class="section-title">Skills & Technologies</h2>
+            <div class="section-line"></div>
+            <p class="section-subtitle">Proficiencies acquired through B.Sc. CSIT coursework and hands-on coding</p>
+        </div>
+
+        <div class="skills-grid">
+            <!-- Technical Skills -->
+            <div class="skill-category-card">
+                <div class="category-header">
+                    <div class="cat-icon cat-frontend"><i class="fa-solid fa-code"></i></div>
+                    <div>
+                        <h3 class="category-title">Technical Skills</h3>
+                        <p class="category-desc">Core programming & web technologies</p>
+                    </div>
+                </div>
+                <div class="skill-bars-list">
+                    {% for skill in data.skills.technical %}
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name"><i class="{{ skill.icon }}"></i> {{ skill.name }}</span>
+                            <span class="skill-percent">{{ skill.level }}%</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill" data-progress="{{ skill.level }}"></div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Tools & Platforms -->
+            <div class="skill-category-card">
+                <div class="category-header">
+                    <div class="cat-icon cat-tools"><i class="fa-solid fa-toolbox"></i></div>
+                    <div>
+                        <h3 class="category-title">Tools & Platforms</h3>
+                        <p class="category-desc">Development, version control & deployment</p>
+                    </div>
+                </div>
+                <div class="skill-bars-list">
+                    {% for skill in data.skills.tools %}
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name"><i class="{{ skill.icon }}"></i> {{ skill.name }}</span>
+                            <span class="skill-percent">{{ skill.level }}%</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill" data-progress="{{ skill.level }}"></div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==============================================
+     PROJECTS SECTION
+=============================================== -->
+<section class="section projects-section" id="projects">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag"><i class="fa-solid fa-diagram-project"></i> Project Showcase</span>
+            <h2 class="section-title">Featured Project</h2>
+            <div class="section-line"></div>
+            <p class="section-subtitle">A healthcare technology solution designed for patient convenience and service coordination</p>
+        </div>
+
+        <!-- Featured Single Project Showcase -->
+        <div class="single-project-container">
+            {% for project in data.projects %}
+            <article class="project-card featured-single-card" data-category="{{ project.category }}">
+                <div class="project-card-banner">
+                    <div class="banner-gradient banner-web banner-healthcare">
+                        <span class="banner-badge"><i class="fa-solid fa-heart-pulse"></i> {{ project.badge }}</span>
+                        <div class="banner-icon">
+                            <i class="fa-solid fa-hospital-user"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card-body">
+                    <h3 class="project-title">{{ project.title }}</h3>
+                    <p class="project-description">{{ project.description }}</p>
+
+                    <div class="project-tech-stack">
+                        {% for tech in project.tech %}
+                        <span class="tech-tag">{{ tech }}</span>
+                        {% endfor %}
+                    </div>
+
+                    <div class="project-card-footer">
+                        <button class="btn btn-sm btn-outline view-project-btn"
+                                data-id="{{ project.id }}"
+                                data-title="{{ project.title }}"
+                                data-desc="{{ project.description }}"
+                                data-badge="{{ project.badge }}"
+                                data-tech="{{ project.tech|join(', ') }}">
+                            <i class="fa-solid fa-circle-info"></i> Project Details
+                        </button>
+                        <div class="project-links">
+                            <a href="{{ project.demo }}" class="link-circle" title="Live Preview">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Project Details Modal -->
+<div class="modal-overlay" id="project-modal">
+    <div class="modal-content">
+        <button class="modal-close" id="modal-close" aria-label="Close Modal">&times;</button>
+        <div class="modal-header">
+            <span class="modal-badge" id="modal-badge">Project</span>
+            <h3 class="modal-title" id="modal-title">Project Title</h3>
+        </div>
+        <div class="modal-body">
+            <p class="modal-desc" id="modal-desc">Project Description</p>
+            <div class="modal-meta">
+                <span class="meta-label"><i class="fa-solid fa-code"></i> Technologies Used:</span>
+                <div class="modal-tech" id="modal-tech"></div>
+            </div>
+            <div class="modal-author-note">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>Developed by <strong>{{ data.personal.name }}</strong> (B.Sc. CSIT, Mahendra College, Nepalgunj)</span>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-sm btn-secondary" id="modal-dismiss-btn">Close</button>
+        </div>
+    </div>
+</div>
+
+<!-- ==============================================
+     CONTACT SECTION
+=============================================== -->
+<section class="section contact-section" id="contact">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag"><i class="fa-solid fa-envelope"></i> Let's Connect</span>
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="section-line"></div>
+            <p class="section-subtitle">Have a question, project proposal, or internship opportunity? Drop me a message!</p>
+        </div>
+
+        <div class="contact-grid">
+            <!-- Contact Information Cards -->
+            <div class="contact-info-column">
+                <h3 class="contact-info-title">Contact Information</h3>
+                <p class="contact-info-desc">
+                    Feel free to reach out via phone, email, or by filling out the message form. I am based in Nepalgunj, Nepal and readily available for discussions.
+                </p>
+
+                <div class="contact-cards-list">
+                    <!-- Location Card -->
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div class="contact-card-content">
+                            <span class="contact-label">Address / Location</span>
+                            <span class="contact-value">{{ data.personal.address }}</span>
+                            <span class="contact-hint">Lumbini Province, Nepal</span>
+                        </div>
+                    </div>
+
+                    <!-- Phone Card -->
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                        <div class="contact-card-content">
+                            <span class="contact-label">Contact Number</span>
+                            <a href="tel:{{ data.personal.phone }}" class="contact-value contact-link">{{ data.personal.phone }}</a>
+                            <span class="contact-hint">Call / SMS / WhatsApp</span>
+                        </div>
+                    </div>
+
+                    <!-- Email Card -->
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+                        <div class="contact-card-content">
+                            <span class="contact-label">Email Address</span>
+                            <a href="mailto:{{ data.personal.email }}" class="contact-value contact-link">{{ data.personal.email }}</a>
+                            <span class="contact-hint">Personal & Professional Inquiries</span>
+                        </div>
+                    </div>
+
+                    <!-- College Card -->
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fa-solid fa-building-columns"></i></div>
+                        <div class="contact-card-content">
+                            <span class="contact-label">College & Faculty</span>
+                            <span class="contact-value">{{ data.personal.college }}</span>
+                            <span class="contact-hint">{{ data.personal.faculty }}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nepalgunj City Badge -->
+                <div class="nepalgunj-card">
+                    <div class="nepalgunj-header">
+                        <i class="fa-solid fa-city"></i>
+                        <span>Nepalgunj, Banke</span>
+                    </div>
+                    <p class="nepalgunj-text">
+                        The vibrant hub of Western Nepal. Proudly pursuing Computer Science & IT excellence at Mahendra College.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Interactive Working Contact Form -->
+            <div class="contact-form-column">
+                <div class="form-card">
+                    <h3 class="form-title">Send a Direct Message</h3>
+                    <p class="form-subtitle">Fill in the form below and I will respond to your inquiry promptly.</p>
+
+                    <form id="contact-form" class="contact-form" novalidate>
+                        <div class="form-group">
+                            <label for="name" class="form-label">Your Name <span class="required">*</span></label>
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-user input-icon"></i>
+                                <input type="text" id="name" name="name" class="form-control" placeholder="e.g. Ram Shrestha" required>
+                            </div>
+                            <span class="field-error" id="name-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Your Email <span class="required">*</span></label>
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-envelope input-icon"></i>
+                                <input type="email" id="email" name="email" class="form-control" placeholder="e.g. name@example.com" required>
+                            </div>
+                            <span class="field-error" id="email-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject</label>
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-tag input-icon"></i>
+                                <input type="text" id="subject" name="subject" class="form-control" placeholder="Project Inquiry / Opportunity / Question">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message <span class="required">*</span></label>
+                            <div class="input-wrapper textarea-wrapper">
+                                <i class="fa-solid fa-message input-icon"></i>
+                                <textarea id="message" name="message" rows="5" class="form-control" placeholder="Write your message here..." required></textarea>
+                            </div>
+                            <span class="field-error" id="message-error"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block" id="submit-btn">
+                            <span class="btn-text">Send Message</span>
+                            <i class="fa-solid fa-paper-plane btn-icon"></i>
+                            <span class="btn-spinner" style="display:none;"><i class="fa-solid fa-spinner fa-spin"></i></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

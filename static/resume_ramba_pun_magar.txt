@@ -1,0 +1,25 @@
+RESUME - Ramba Pun Magar
+==================================================
+
+Contact: +977 9812345678
+Email: ramapunmagar28@gmail.com
+Address: Nepalgunj, Banke, Nepal
+Faculty: B.Sc. Computer Science and Information Technology (B.Sc. CSIT)
+College: Mahendra Multiple Campus (Mahendra College)
+Current Status: B.Sc. CSIT Student
+
+SUMMARY:
+Hello! I am Ramba Pun Magar, a student of B.Sc. CSIT at Mahendra College, Nepalgunj. I enjoy building responsive, accessible, and high-performance applications that solve real-world problems. With strong fundamentals in C, C++, C#, HTML, CSS, and Python, I am constantly exploring emerging technologies and eager to collaborate on impactful software engineering projects.
+
+EDUCATION:
+B.Sc. Computer Science and Information Technology (B.Sc. CSIT)
+Mahendra Multiple Campus (Mahendra College)
+
+TECHNICAL SKILLS:
+C, C++, C#, HTML, CSS, Python
+
+TOOLS & PLATFORMS:
+Git, GitHub, VS Code, Vercel
+
+FEATURED PROJECT:
+Home Service Healthcare management system
